@@ -866,3 +866,10 @@ vim.keymap.set('n', '<leader>hf', function() ui.nav_file(8) end)
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+--
+--
+vim.keymap.set('n', '<F5>', function()
+    local save_cursor = vim.fn.getpos(".")
+    pcall(function() vim.cmd [[%s/\s\+$//e]] end)
+    vim.fn.setpos(".", save_cursor) 
+end)
