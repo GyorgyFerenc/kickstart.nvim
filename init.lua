@@ -159,7 +159,11 @@ require('lazy').setup({
   {
     'nvim-tree/nvim-tree.lua',
     config = function()
-      require("nvim-tree").setup()
+      require("nvim-tree").setup({
+        filters = {
+          git_ignored = false,
+        },
+      })
       vim.keymap.set('n', '<leader>pv', ':NvimTreeToggle<enter>')
     end,
   },
