@@ -225,7 +225,10 @@ require('lazy').setup({
         -- },
         pickers = {
           find_files = {
-            follow = true
+            follow = true,
+          },
+          live_grep = {
+            follow = true,
           }
         },
         extensions = {
